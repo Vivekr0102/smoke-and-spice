@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Calendar, Menu as MenuIcon, X, Phone, Instagram } from 'lucide-react';
+import { ShoppingBag, Calendar, Menu as MenuIcon, X, Phone, Instagram, Utensils, Home } from 'lucide-react';
 import { INSTAGRAM_URL } from '../data/menuData';
 
-export default function Navbar({ cartCount, onOpenCart, onOpenReservation }) {
+export default function Navbar({ cartCount, currentPage, onNavigate, onOpenCart, onOpenReservation }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -13,6 +13,19 @@ export default function Navbar({ cartCount, onOpenCart, onOpenReservation }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (page, sectionId) => {
+    onNavigate(page);
+    setMobileMenuOpen(false);
+    if (sectionId) {
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <header
@@ -25,7 +38,10 @@ export default function Navbar({ cartCount, onOpenCart, onOpenReservation }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <button
+            onClick={() => handleNavClick('home')}
+            className="flex items-center gap-3 group text-left focus:outline-none"
+          >
             <img
               src="/logo.jpg"
               alt="Smoke & Spice Logo"
@@ -39,15 +55,47 @@ export default function Navbar({ cartCount, onOpenCart, onOpenReservation }) {
                 Nerul, Navi Mumbai
               </p>
             </div>
-          </a>
+          </button>
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-stone-300">
-            <a href="#menu" className="hover:text-orange-400 transition-colors">Menu</a>
-            <a href="#specials" className="hover:text-orange-400 transition-colors">Chef Special</a>
-            <a href="#story" className="hover:text-orange-400 transition-colors">About Us</a>
-            <a href="#reviews" className="hover:text-orange-400 transition-colors">Reviews</a>
-            <a href="#contact" className="hover:text-orange-400 transition-colors">Contact</a>
+            <button
+              onClick={() => handleNavClick('home')}
+              className={`transition-colors ${
+                currentPage === 'home' ? 'text-orange-400 font-bold' : 'hover:text-orange-400'
+              }`}
+            >
+              Home
+            </button>
+            <button
+              onClick={() => handleNavClick('menu')}
+              className={`flex items-center gap-1 px-3 py-1 rounded-lg transition-all ${
+                currentPage === 'menu'
+                  ? 'bg-orange-600 text-stone-950 font-bold shadow-md shadow-orange-600/30'
+                  : 'text-orange-400 hover:text-white bg-orange-950/40 border border-orange-500/30'
+              }`}
+            >
+              <Utensils className="w-4 h-4" />
+              <span>Full Menu</span>
+            </button>
+            <button
+              onClick={() => handleNavClick('home', 'specials')}
+              className="hover:text-orange-400 transition-colors"
+            >
+              Chef Special
+            </button>
+            <button
+              onClick={() => handleNavClick('home', 'story')}
+              className="hover:text-orange-400 transition-colors"
+            >
+              About Us
+            </button>
+            <button
+              onClick={() => handleNavClick('home', 'contact')}
+              className="hover:text-orange-400 transition-colors"
+            >
+              Contact
+            </button>
           </nav>
 
           {/* Action CTAs */}
@@ -121,34 +169,38 @@ export default function Navbar({ cartCount, onOpenCart, onOpenReservation }) {
       {mobileMenuOpen && (
         <div className="md:hidden bg-stone-950/98 border-b border-stone-800 px-4 pt-4 pb-6 space-y-4">
           <nav className="flex flex-col space-y-3 text-stone-200 text-lg font-medium">
-            <a
-              href="#menu"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-orange-400 py-1"
+            <button
+              onClick={() => handleNavClick('home')}
+              className="text-left hover:text-orange-400 py-1 flex items-center gap-2"
             >
-              Menu
-            </a>
-            <a
-              href="#specials"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-orange-400 py-1"
+              <Home className="w-5 h-5 text-orange-500" />
+              <span>Home</span>
+            </button>
+            <button
+              onClick={() => handleNavClick('menu')}
+              className="text-left text-orange-400 font-bold py-1 flex items-center gap-2"
+            >
+              <Utensils className="w-5 h-5" />
+              <span>Dedicated Menu Page</span>
+            </button>
+            <button
+              onClick={() => handleNavClick('home', 'specials')}
+              className="text-left hover:text-orange-400 py-1"
             >
               Chef Special
-            </a>
-            <a
-              href="#story"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-orange-400 py-1"
+            </button>
+            <button
+              onClick={() => handleNavClick('home', 'story')}
+              className="text-left hover:text-orange-400 py-1"
             >
               About Us
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-orange-400 py-1"
+            </button>
+            <button
+              onClick={() => handleNavClick('home', 'contact')}
+              className="text-left hover:text-orange-400 py-1"
             >
               Contact &amp; Timings
-            </a>
+            </button>
           </nav>
           <div className="pt-2 border-t border-stone-800 flex flex-col gap-2">
             <a

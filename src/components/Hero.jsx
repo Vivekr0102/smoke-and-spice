@@ -1,15 +1,15 @@
 import React from 'react';
 import { Flame, ArrowRight, Utensils } from 'lucide-react';
 
-export default function Hero({ onOpenReservation }) {
+export default function Hero({ onOpenReservation, onNavigateMenu }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-stone-950">
       {/* Background Image with Dark Vignette Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=2000&q=80"
-          alt="Smoke and Spice Grill"
-          className="w-full h-full object-cover object-center opacity-30 scale-105"
+          src="/hero_bg.jpg"
+          alt="Smoke and Spice Feast Background"
+          className="w-full h-full object-cover object-center opacity-35 scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/70 to-stone-950/40"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-950/30 via-transparent to-transparent"></div>
@@ -33,13 +33,13 @@ export default function Hero({ onOpenReservation }) {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
-          <a
-            href="#menu"
+          <button
+            onClick={onNavigateMenu}
             className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-orange-600 via-orange-500 to-red-600 hover:from-orange-500 hover:to-red-500 text-stone-950 font-extrabold text-base tracking-wide flex items-center justify-center gap-3 shadow-xl shadow-orange-600/30 hover:shadow-orange-600/50 hover:scale-105 transition-all"
           >
             <Utensils className="w-5 h-5 stroke-[2.5]" />
-            <span>Explore Menu</span>
-          </a>
+            <span>View Full Menu</span>
+          </button>
 
           <button
             onClick={onOpenReservation}

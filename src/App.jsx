@@ -2,23 +2,18 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Specials from './components/Specials';
-import Menu from './components/Menu';
 import Story from './components/Story';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import ReservationModal from './components/ReservationModal';
 import CartDrawer from './components/CartDrawer';
+import FloatingCartBar from './components/FloatingCartBar';
+import MenuPage from './pages/MenuPage';
 
 export default function App() {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 'nonveg-1-full',
-      name: 'Butter Chicken (FULL)',
-      price: 350,
-      quantity: 1,
-      image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80',
-    }
-  ]);
+  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'menu'
+  const [cartItems, setCartItems] = useState([]); // Default EMPTY cart for users!
+
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isReservationOpen, setIsReservationOpen] = useState(false);
 
@@ -32,7 +27,7 @@ export default function App() {
       }
       return [...prevItems, { ...item, quantity: 1 }];
     });
-    setIsCartOpen(true);
+    // Silent update: FloatingCartBar will automatically pop up!
   };
 
   const handleUpdateQuantity = (id, newQty) => {
@@ -60,21 +55,42 @@ export default function App() {
       {/* Header Navigation */}
       <Navbar
         cartCount={totalCartCount}
+        currentPage={currentPage}
+        onNavigate={(page) => setCurrentPage(page)}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenReservation={() => setIsReservationOpen(true)}
       />
 
-      {/* Main Page Sections */}
+      {/* Main Page Views */}
       <main>
-        <Hero onOpenReservation={() => setIsReservationOpen(true)} />
-        <Specials onAddToCart={handleAddToCart} />
-        <Menu onAddToCart={handleAddToCart} />
-        <Story />
-        <Testimonials />
+        {currentPage === 'home' ? (
+          <>
+            <Hero
+              onOpenReservation={() => setIsReservationOpen(true)}
+              onNavigateMenu={() => setCurrentPage('menu')}
+            />
+            <Specials onAddToCart={handleAddToCart} />
+            <Story />
+            <Testimonials />
+            <Footer />
+          </>
+        ) : (
+          <MenuPage
+            onAddToCart={handleAddToCart}
+            onNavigateHome={() => setCurrentPage('home')}
+            onOpenCart={() => setIsCartOpen(true)}
+            cartCount={totalCartCount}
+          />
+        )}
       </main>
 
-      {/* Footer */}
-      <Footer />
+      {/* Floating Bottom View Cart Bar (Pops up when item added) */}
+      {!isCartOpen && (
+        <FloatingCartBar
+          cartItems={cartItems}
+          onOpenCart={() => setIsCartOpen(true)}
+        />
+      )}
 
       {/* Modals & Drawers */}
       <ReservationModal
