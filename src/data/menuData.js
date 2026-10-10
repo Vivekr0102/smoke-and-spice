@@ -1,25 +1,30 @@
 export const INSTAGRAM_URL = "https://www.instagram.com/smoke_n_spice.nm?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==";
 
 export const MENU_CATEGORIES = [
-  { id: 'all', name: 'All Dishes' },
-  { id: 'starters', name: 'Starters & Tandoori' },
-  { id: 'nonveg-main', name: 'Non-Veg Main Course' },
-  { id: 'veg-main', name: 'Veg Main Course' },
-  { id: 'roti-bread', name: '🍞 Roti & Breads' },
-  { id: 'dal-rice', name: '🍚 Dal & Rice' },
-  { id: 'biryani', name: '🍗 Biryani' },
-  { id: 'family-pack', name: '📦 Family Pack Biryanis' },
-  { id: 'fried-rice', name: '🍚 Fried Rice' },
-  { id: 'noodles', name: '🍜 Noodles' },
-  { id: 'soups', name: '🥣 Soups' },
+  { id: 'all', name: 'All Dishes', icon: '🍽️' },
+  { id: 'roti-bread', name: 'Breads & Roti', icon: '🍞' },
+  { id: 'family-pack', name: 'Family Packs', icon: '📦' },
+  { id: 'nonveg-starters', name: 'Non-Veg Starters', icon: '🍗' },
+  { id: 'tandoori-starters', name: 'Tandoori Starters', icon: '🔥' },
+  { id: 'nonveg-main', name: 'Non-Veg Main Course', icon: '🥘' },
+  { id: 'veg-main', name: 'Veg Main Course', icon: '🥦' },
+  { id: 'dal-rice', name: 'Dal & Rice', icon: '🍚' },
+  { id: 'nonveg-biryani', name: 'Non-Veg Biryani', icon: '🍗' },
+  { id: 'veg-biryani', name: 'Veg Biryani & Pulao', icon: '🥗' },
+  { id: 'nonveg-fried-rice', name: 'Non-Veg Fried Rice', icon: '🍚' },
+  { id: 'veg-fried-rice', name: 'Veg Fried Rice', icon: '🥦' },
+  { id: 'nonveg-noodles', name: 'Non-Veg Noodles', icon: '🍜' },
+  { id: 'veg-noodles', name: 'Veg Noodles', icon: '🥦' },
+  { id: 'nonveg-soup', name: 'Non-Veg Soup', icon: '🥣' },
+  { id: 'veg-soup', name: 'Veg Soup', icon: '🥗' }
 ];
 
 export const MENU_ITEMS = [
-  // --- SOUPS ---
+  // --- NON-VEG SOUPS ---
   {
     id: 'soup-1',
     name: 'Chicken Clear Soup',
-    category: 'soups',
+    category: 'nonveg-soup',
     priceHalf: 70,
     priceFull: 100,
     price: 100,
@@ -30,7 +35,7 @@ export const MENU_ITEMS = [
   {
     id: 'soup-2',
     name: 'Chicken Manchow Soup',
-    category: 'soups',
+    category: 'nonveg-soup',
     priceHalf: 70,
     priceFull: 100,
     price: 100,
@@ -41,7 +46,7 @@ export const MENU_ITEMS = [
   {
     id: 'soup-3',
     name: 'Chicken Hot & Sour Soup',
-    category: 'soups',
+    category: 'nonveg-soup',
     priceHalf: 70,
     priceFull: 100,
     price: 100,
@@ -52,16 +57,18 @@ export const MENU_ITEMS = [
   {
     id: 'soup-4',
     name: 'Lung Fung Soup',
-    category: 'soups',
+    category: 'nonveg-soup',
     price: 120,
     description: 'Thick, velvety chicken soup prepared with mushrooms, egg drop ribbons, and lemon pepper.',
     image: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80',
     tags: ['Non-Veg', 'Chef Special'],
   },
+
+  // --- VEG SOUPS ---
   {
     id: 'soup-5',
     name: 'Veg Clear Soup',
-    category: 'soups',
+    category: 'veg-soup',
     priceHalf: 60,
     priceFull: 90,
     price: 90,
@@ -72,7 +79,7 @@ export const MENU_ITEMS = [
   {
     id: 'soup-6',
     name: 'Veg Manchow Soup',
-    category: 'soups',
+    category: 'veg-soup',
     priceHalf: 60,
     priceFull: 90,
     price: 90,
@@ -83,7 +90,7 @@ export const MENU_ITEMS = [
   {
     id: 'soup-7',
     name: 'Veg Hot & Sour Soup',
-    category: 'soups',
+    category: 'veg-soup',
     priceHalf: 60,
     priceFull: 90,
     price: 90,
@@ -92,11 +99,11 @@ export const MENU_ITEMS = [
     tags: ['Pure Veg', 'Tangy & Spicy'],
   },
 
-  // --- STARTERS & TANDOORI ---
+  // --- NON-VEG STARTERS ---
   {
     id: 'starter-1',
     name: 'Chicken Lollypop Oil Fry',
-    category: 'starters',
+    category: 'nonveg-starters',
     priceHalf: 150,
     priceFull: 250,
     price: 250,
@@ -107,7 +114,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-2',
     name: 'Chicken Lollypop Dry / Gravy',
-    category: 'starters',
+    category: 'nonveg-starters',
     priceHalf: 200,
     priceFull: 320,
     price: 320,
@@ -118,7 +125,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-3',
     name: 'Chicken Crispy',
-    category: 'starters',
+    category: 'nonveg-starters',
     priceHalf: 150,
     priceFull: 220,
     price: 220,
@@ -129,7 +136,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-4',
     name: 'Chicken Peri Peri',
-    category: 'starters',
+    category: 'nonveg-starters',
     price: 250,
     description: 'Tender chicken strips marinated in fiery African peri-peri chili glaze and pan charred.',
     image: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=800&q=80',
@@ -138,7 +145,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-5',
     name: 'Chicken Hong Kong',
-    category: 'starters',
+    category: 'nonveg-starters',
     price: 250,
     description: 'Wok-tossed chicken chunks with whole cashew nuts, dry red chilies, and soy reduction.',
     image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80',
@@ -147,7 +154,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-6',
     name: 'Chicken Singapuri',
-    category: 'starters',
+    category: 'nonveg-starters',
     priceHalf: 150,
     priceFull: 210,
     price: 210,
@@ -158,7 +165,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-7',
     name: 'Chicken Chilly Dry / Gravy',
-    category: 'starters',
+    category: 'nonveg-starters',
     priceHalf: 150,
     priceFull: 220,
     price: 220,
@@ -169,7 +176,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-8',
     name: 'Chicken Manchurian Dry / Gravy',
-    category: 'starters',
+    category: 'nonveg-starters',
     priceHalf: 150,
     priceFull: 220,
     price: 220,
@@ -180,7 +187,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-9',
     name: 'Chinese Chicken Bhel',
-    category: 'starters',
+    category: 'nonveg-starters',
     priceHalf: 100,
     priceFull: 180,
     price: 180,
@@ -191,7 +198,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-10',
     name: 'Chicken 65 Dry',
-    category: 'starters',
+    category: 'nonveg-starters',
     priceHalf: 150,
     priceFull: 220,
     price: 220,
@@ -202,16 +209,18 @@ export const MENU_ITEMS = [
   {
     id: 'starter-11',
     name: 'Chicken Satay',
-    category: 'starters',
+    category: 'nonveg-starters',
     price: 300,
     description: 'Grilled chicken skewers served with savory homemade peanut sauce and chili dip.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
     tags: ['Non-Veg', 'Special Skewer'],
   },
+
+  // --- TANDOORI STARTERS ---
   {
     id: 'starter-12',
     name: 'Chicken Tandoori',
-    category: 'starters',
+    category: 'tandoori-starters',
     priceHalf: 290,
     priceFull: 495,
     price: 495,
@@ -222,7 +231,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-13',
     name: 'Chicken Pahadi Tikka',
-    category: 'starters',
+    category: 'tandoori-starters',
     price: 300,
     description: 'Boneless chicken chunks marinated in fresh mint, coriander, green chili, and spinach pesto grilled in tandoor.',
     image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
@@ -231,7 +240,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-14',
     name: 'Chicken Banjara Tikka',
-    category: 'starters',
+    category: 'tandoori-starters',
     price: 310,
     description: 'Chicken pieces coated with coarse spiced yogurt, garlic, yellow chili, and roasted cumin.',
     image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
@@ -240,7 +249,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-15',
     name: 'Chicken Seekh Kabab',
-    category: 'starters',
+    category: 'tandoori-starters',
     price: 320,
     description: 'Succulent skewers of spiced minced chicken blended with coriander, mint, garlic, and cooked over charcoal.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80',
@@ -249,7 +258,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-16',
     name: 'Chicken Tikka',
-    category: 'starters',
+    category: 'tandoori-starters',
     price: 280,
     description: 'Classic red spiced chicken tikka char-broiled to perfection.',
     image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
@@ -258,7 +267,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-17',
     name: 'Chicken Malai Tikka',
-    category: 'starters',
+    category: 'tandoori-starters',
     price: 330,
     description: 'Melt-in-mouth chicken boneless tikka marinated in rich cream, cheese, cashews, and mild spices.',
     image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
@@ -267,7 +276,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-18',
     name: 'Chicken Chilli Milli Kabab',
-    category: 'starters',
+    category: 'tandoori-starters',
     price: 330,
     description: 'Cheesy & spicy stuffed chicken tikka rolls wrapped with bell peppers and roasted spices.',
     image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
@@ -276,7 +285,7 @@ export const MENU_ITEMS = [
   {
     id: 'starter-19',
     name: 'Chicken Pahadi Tandoori',
-    category: 'starters',
+    category: 'tandoori-starters',
     priceHalf: 300,
     priceFull: 430,
     price: 430,
@@ -758,7 +767,7 @@ export const MENU_ITEMS = [
     tags: ['Pure Veg'],
   },
 
-  // --- ROTI & INDIAN BREADS ---
+  // --- ROTI & BREADS ---
   {
     id: 'roti-1',
     name: 'Chapati Plain',
@@ -928,11 +937,11 @@ export const MENU_ITEMS = [
     tags: ['Pure Veg'],
   },
 
-  // --- BIRYANI ---
+  // --- NON-VEG BIRYANI ---
   {
     id: 'biryani-1',
     name: 'Chicken Biryani',
-    category: 'biryani',
+    category: 'nonveg-biryani',
     priceHalf: 130,
     priceFull: 180,
     price: 180,
@@ -943,7 +952,7 @@ export const MENU_ITEMS = [
   {
     id: 'biryani-2',
     name: 'Hyderabadi Chicken Biryani',
-    category: 'biryani',
+    category: 'nonveg-biryani',
     priceHalf: 140,
     priceFull: 190,
     price: 190,
@@ -954,7 +963,7 @@ export const MENU_ITEMS = [
   {
     id: 'biryani-3',
     name: 'Chicken Tikka Biryani',
-    category: 'biryani',
+    category: 'nonveg-biryani',
     priceHalf: 180,
     priceFull: 260,
     price: 260,
@@ -965,7 +974,7 @@ export const MENU_ITEMS = [
   {
     id: 'biryani-4',
     name: 'Chicken Tandoori Biryani',
-    category: 'biryani',
+    category: 'nonveg-biryani',
     priceHalf: 180,
     priceFull: 260,
     price: 260,
@@ -976,7 +985,7 @@ export const MENU_ITEMS = [
   {
     id: 'biryani-5',
     name: 'Chicken Egg Biryani',
-    category: 'biryani',
+    category: 'nonveg-biryani',
     priceHalf: 140,
     priceFull: 190,
     price: 190,
@@ -987,7 +996,7 @@ export const MENU_ITEMS = [
   {
     id: 'biryani-6',
     name: 'Mutton Biryani',
-    category: 'biryani',
+    category: 'nonveg-biryani',
     priceHalf: 220,
     priceFull: 350,
     price: 350,
@@ -995,10 +1004,12 @@ export const MENU_ITEMS = [
     image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
     tags: ['Mutton', 'Royal Feast'],
   },
+
+  // --- VEG BIRYANI & PULAO ---
   {
     id: 'biryani-7',
     name: 'Veg Biryani',
-    category: 'biryani',
+    category: 'veg-biryani',
     priceHalf: 120,
     priceFull: 170,
     price: 170,
@@ -1009,7 +1020,7 @@ export const MENU_ITEMS = [
   {
     id: 'biryani-8',
     name: 'Paneer Biryani',
-    category: 'biryani',
+    category: 'veg-biryani',
     priceHalf: 140,
     priceFull: 200,
     price: 200,
@@ -1020,7 +1031,7 @@ export const MENU_ITEMS = [
   {
     id: 'biryani-9',
     name: 'Paneer Tikka Biryani',
-    category: 'biryani',
+    category: 'veg-biryani',
     priceHalf: 160,
     priceFull: 240,
     price: 240,
@@ -1029,7 +1040,7 @@ export const MENU_ITEMS = [
     tags: ['Pure Veg', 'Tandoori Paneer'],
   },
 
-  // --- FAMILY PACK BIRYANIS ---
+  // --- FAMILY PACKS ---
   {
     id: 'family-1',
     name: 'Veg Biryani Family Pack',
@@ -1094,11 +1105,11 @@ export const MENU_ITEMS = [
     tags: ['Pure Veg', 'Tandoori Paneer Pack'],
   },
 
-  // --- FRIED RICE ---
+  // --- NON-VEG FRIED RICE ---
   {
     id: 'rice-1',
     name: 'Chicken Triple Schezwan Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 140,
     priceFull: 180,
     price: 180,
@@ -1109,7 +1120,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-2',
     name: 'Chicken Chopper Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 170,
     priceFull: 250,
     price: 250,
@@ -1120,7 +1131,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-3',
     name: 'Chicken Fried Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 100,
     priceFull: 170,
     price: 170,
@@ -1131,7 +1142,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-4',
     name: 'Chicken Schezwan Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 120,
     priceFull: 180,
     price: 180,
@@ -1142,7 +1153,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-5',
     name: 'Chicken Singapuri Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 130,
     priceFull: 180,
     price: 180,
@@ -1153,7 +1164,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-6',
     name: 'Chicken Hong Kong Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 130,
     priceFull: 180,
     price: 180,
@@ -1164,7 +1175,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-7',
     name: 'Chicken Burnt Garlic Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 130,
     priceFull: 190,
     price: 190,
@@ -1175,7 +1186,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-8',
     name: 'Chicken Combination Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 120,
     priceFull: 180,
     price: 180,
@@ -1186,7 +1197,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-9',
     name: 'Egg Fried Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 100,
     priceFull: 150,
     price: 150,
@@ -1197,7 +1208,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-10',
     name: 'Chicken Thousand Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 170,
     priceFull: 250,
     price: 250,
@@ -1208,7 +1219,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-11',
     name: 'Chicken Sherpa Rice',
-    category: 'fried-rice',
+    category: 'nonveg-fried-rice',
     priceHalf: 180,
     priceFull: 260,
     price: 260,
@@ -1216,10 +1227,12 @@ export const MENU_ITEMS = [
     image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80',
     tags: ['Non-Veg', 'Himalayan Style'],
   },
+
+  // --- VEG FRIED RICE ---
   {
     id: 'rice-12',
     name: 'Veg Fried Rice',
-    category: 'fried-rice',
+    category: 'veg-fried-rice',
     priceHalf: 90,
     priceFull: 150,
     price: 150,
@@ -1230,7 +1243,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-13',
     name: 'Veg Schezwan Rice',
-    category: 'fried-rice',
+    category: 'veg-fried-rice',
     priceHalf: 100,
     priceFull: 160,
     price: 160,
@@ -1241,7 +1254,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-14',
     name: 'Veg Triple Schezwan Rice',
-    category: 'fried-rice',
+    category: 'veg-fried-rice',
     priceHalf: 130,
     priceFull: 170,
     price: 170,
@@ -1252,7 +1265,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-15',
     name: 'Veg Chopper Rice',
-    category: 'fried-rice',
+    category: 'veg-fried-rice',
     priceHalf: 150,
     priceFull: 220,
     price: 220,
@@ -1263,7 +1276,7 @@ export const MENU_ITEMS = [
   {
     id: 'rice-16',
     name: 'Veg Burnt Garlic Rice',
-    category: 'fried-rice',
+    category: 'veg-fried-rice',
     priceHalf: 110,
     priceFull: 170,
     price: 170,
@@ -1272,11 +1285,11 @@ export const MENU_ITEMS = [
     tags: ['Pure Veg'],
   },
 
-  // --- NOODLES ---
+  // --- NON-VEG NOODLES ---
   {
     id: 'noodle-1',
     name: 'Chicken Hakka Noodles',
-    category: 'noodles',
+    category: 'nonveg-noodles',
     priceHalf: 100,
     priceFull: 170,
     price: 170,
@@ -1287,7 +1300,7 @@ export const MENU_ITEMS = [
   {
     id: 'noodle-2',
     name: 'Chi. Schezwan Noodles',
-    category: 'noodles',
+    category: 'nonveg-noodles',
     priceHalf: 120,
     priceFull: 180,
     price: 180,
@@ -1298,7 +1311,7 @@ export const MENU_ITEMS = [
   {
     id: 'noodle-3',
     name: 'Chicken Triple Schezwan Noodles',
-    category: 'noodles',
+    category: 'nonveg-noodles',
     priceHalf: 150,
     priceFull: 220,
     price: 220,
@@ -1309,7 +1322,7 @@ export const MENU_ITEMS = [
   {
     id: 'noodle-4',
     name: 'Chicken Singapuri Noodles',
-    category: 'noodles',
+    category: 'nonveg-noodles',
     priceHalf: 130,
     priceFull: 190,
     price: 190,
@@ -1320,7 +1333,7 @@ export const MENU_ITEMS = [
   {
     id: 'noodle-5',
     name: 'Chicken Hong Kong Noodles',
-    category: 'noodles',
+    category: 'nonveg-noodles',
     priceHalf: 130,
     priceFull: 190,
     price: 190,
@@ -1331,7 +1344,7 @@ export const MENU_ITEMS = [
   {
     id: 'noodle-6',
     name: 'Chicken Manchow Noodles',
-    category: 'noodles',
+    category: 'nonveg-noodles',
     priceHalf: 130,
     priceFull: 190,
     price: 190,
@@ -1342,7 +1355,7 @@ export const MENU_ITEMS = [
   {
     id: 'noodle-7',
     name: 'Egg Hakka Noodles',
-    category: 'noodles',
+    category: 'nonveg-noodles',
     priceHalf: 100,
     priceFull: 150,
     price: 150,
@@ -1350,10 +1363,12 @@ export const MENU_ITEMS = [
     image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80',
     tags: ['Egg Special'],
   },
+
+  // --- VEG NOODLES ---
   {
     id: 'noodle-8',
     name: 'Veg Hakka Noodles',
-    category: 'noodles',
+    category: 'veg-noodles',
     priceHalf: 100,
     priceFull: 160,
     price: 160,
@@ -1364,7 +1379,7 @@ export const MENU_ITEMS = [
   {
     id: 'noodle-9',
     name: 'Veg Schezwan Noodles',
-    category: 'noodles',
+    category: 'veg-noodles',
     priceHalf: 110,
     priceFull: 170,
     price: 170,
@@ -1375,7 +1390,7 @@ export const MENU_ITEMS = [
   {
     id: 'noodle-10',
     name: 'Veg Triple Noodles',
-    category: 'noodles',
+    category: 'veg-noodles',
     priceHalf: 140,
     priceFull: 190,
     price: 190,
@@ -1386,7 +1401,7 @@ export const MENU_ITEMS = [
   {
     id: 'noodle-11',
     name: 'Paneer Triple Noodles',
-    category: 'noodles',
+    category: 'veg-noodles',
     priceHalf: 160,
     priceFull: 220,
     price: 220,
