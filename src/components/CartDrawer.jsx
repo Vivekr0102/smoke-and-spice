@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Trash2, Plus, Minus, ShoppingBag, CheckCircle2, MessageCircle, Send } from 'lucide-react';
+import { getDishImage, handleImageError } from '../utils/foodImageProvider';
 
 export default function CartDrawer({ isOpen, onClose, cartItems, onUpdateQuantity, onRemoveItem, onClearCart }) {
   const [orderPlaced, setOrderPlaced] = useState(false);
@@ -164,8 +165,9 @@ GST (5%): ₹${tax.toFixed(0)}
                       className="bg-stone-950 p-3.5 rounded-2xl border border-stone-800 flex items-center justify-between gap-3"
                     >
                       <img
-                        src={item.image}
+                        src={getDishImage(item)}
                         alt={item.name}
+                        onError={(e) => handleImageError(e)}
                         className="w-14 h-14 rounded-xl object-cover"
                       />
                       <div className="flex-1 min-w-0">

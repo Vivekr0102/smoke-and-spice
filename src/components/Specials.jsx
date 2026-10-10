@@ -1,6 +1,7 @@
 import React from 'react';
 import { CHEF_SPECIAL } from '../data/menuData';
 import { Flame, Clock, Plus, Award, CheckCircle2 } from 'lucide-react';
+import { handleImageError } from '../utils/foodImageProvider';
 
 export default function Specials({ onAddToCart }) {
   return (
@@ -29,6 +30,7 @@ export default function Specials({ onAddToCart }) {
             <img
               src={CHEF_SPECIAL.image}
               alt={CHEF_SPECIAL.title}
+              onError={(e) => handleImageError(e)}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-stone-950"></div>
