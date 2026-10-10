@@ -2,21 +2,21 @@ export const INSTAGRAM_URL = "https://www.instagram.com/smoke_n_spice.nm?utm_sou
 
 export const MENU_CATEGORIES = [
   { id: 'all', name: 'All Dishes', icon: '🍽️' },
-  { id: 'roti-bread', name: 'Breads & Roti', icon: '🍞' },
-  { id: 'family-pack', name: 'Family Packs', icon: '📦' },
-  { id: 'nonveg-starters', name: 'Non-Veg Starters', icon: '🍗' },
-  { id: 'tandoori-starters', name: 'Tandoori Starters', icon: '🔥' },
-  { id: 'nonveg-main', name: 'Non-Veg Main Course', icon: '🥘' },
-  { id: 'veg-main', name: 'Veg Main Course', icon: '🥦' },
-  { id: 'dal-rice', name: 'Dal & Rice', icon: '🍚' },
-  { id: 'nonveg-biryani', name: 'Non-Veg Biryani', icon: '🍗' },
-  { id: 'veg-biryani', name: 'Veg Biryani & Pulao', icon: '🥗' },
-  { id: 'nonveg-fried-rice', name: 'Non-Veg Fried Rice', icon: '🍚' },
-  { id: 'veg-fried-rice', name: 'Veg Fried Rice', icon: '🥦' },
-  { id: 'nonveg-noodles', name: 'Non-Veg Noodles', icon: '🍜' },
-  { id: 'veg-noodles', name: 'Veg Noodles', icon: '🥦' },
+  { id: 'veg-soup', name: 'Veg Soup', icon: '🥗' },
   { id: 'nonveg-soup', name: 'Non-Veg Soup', icon: '🥣' },
-  { id: 'veg-soup', name: 'Veg Soup', icon: '🥗' }
+  { id: 'veg-fried-rice', name: 'Veg Fried Rice', icon: '🥦' },
+  { id: 'nonveg-fried-rice', name: 'Non-Veg Fried Rice', icon: '🍚' },
+  { id: 'veg-noodles', name: 'Veg Noodles', icon: '🥦' },
+  { id: 'nonveg-noodles', name: 'Non-Veg Noodles', icon: '🍜' },
+  { id: 'tandoori-starters', name: 'Tandoori Starters', icon: '🔥' },
+  { id: 'nonveg-starters', name: 'Non-Veg Starters', icon: '🍗' },
+  { id: 'veg-main', name: 'Veg Main Course', icon: '🥦' },
+  { id: 'nonveg-main', name: 'Non-Veg Main Course', icon: '🥘' },
+  { id: 'veg-biryani', name: 'Veg Biryani & Pulao', icon: '🥗' },
+  { id: 'nonveg-biryani', name: 'Non-Veg Biryani', icon: '🍗' },
+  { id: 'dal-rice', name: 'Dal & Rice', icon: '🍚' },
+  { id: 'family-pack', name: 'Family Packs', icon: '📦' },
+  { id: 'roti-bread', name: 'Breads & Roti', icon: '🍞' }
 ];
 
 export const MENU_ITEMS = [
